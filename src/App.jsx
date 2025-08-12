@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, Text } from "@react-three/drei";
 
@@ -6,8 +6,7 @@ import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { DynamicModel, preloadModels } from "./components/DynamicModel";
 import { useFrame, useThree } from "@react-three/fiber";
-import LiquidGlassTabs from "./components/ui/liquidglasstabs"; // Adjust path if needed
-
+import LiquidGlassTabs from "./components/ui/liquidglasstabs"; // Make sure path is correct
 
 function easeInOutBack(t) {
   const c1 = 1.70158;
@@ -54,7 +53,7 @@ export function Hero({ titles, scrollProgress, setIndex }) {
   return (
     <section
       style={{
-        height: "400vh", // 3 viewport heights for scroll animation
+        height: "400vh", // 4 viewport heights for scroll animation
         position: "relative",
       }}
     >
@@ -83,6 +82,12 @@ export function Hero({ titles, scrollProgress, setIndex }) {
           <directionalLight position={[5, 5, 5]} intensity={1} />
 
           <CameraAnimator progress={scrollProgress} />
+
+          <Suspense fallback={null}>
+            <group scale={0.1}>
+              <DynamicModel key={titles[index]} modelName={titles[index]} />
+            </group>
+          </Suspense>
 
           {/* Fixed Brand Text */}
           <Text
@@ -117,11 +122,6 @@ export function Hero({ titles, scrollProgress, setIndex }) {
           >
             {titles[index]}
           </Text>
-
-          {/* Model */}
-          <group scale={0.1}>
-            <DynamicModel key={titles[index]} modelName={titles[index]} />
-          </group>
 
           <Environment preset="city" />
         </Canvas>
@@ -203,6 +203,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gray-20 text-gray-900 font-mono">
+      {/* Language Selector */}
       <div className="fixed top-4 right-4 flex space-x-2 z-30">
         {Object.keys(translations).map((l) => (
           <Button
@@ -210,8 +211,8 @@ export default function App() {
             size="sm"
             className={`${
               lang === l
-                ? "bg-gray-700/75 text-white font-semibold"
-                : "bg-gray-500/50 text-white hover:bg-gray-600/80"
+                ? "bg-gray-500/75 text-white font-semibold"
+                : "bg-gray-300/50 text-white hover:bg-gray-600/80"
             } rounded-sm px-3 py-1 transition-colors border border-white/20`}
             onClick={() => setLang(l)}
           >
@@ -222,8 +223,9 @@ export default function App() {
 
       <Hero titles={titles} scrollProgress={scrollProgress} setIndex={setIndex} />
 
+      {/* Tabs + Portfolio combined */}
       <section
-        className="w-full flex justify-center py-20"
+        className="w-full flex justify-center"
         style={{
           background: "rgba(24, 26, 29, 0.6)", // Dark semi-transparent bg
           color: "#e0e6f0", // Light text for contrast
@@ -232,37 +234,6 @@ export default function App() {
         }}
       >
         <LiquidGlassTabs />
-      </section>
-
-      {/* Portfolio Section */}
-      <section className="min-h-screen w-full flex items-center justify-center border-t border-gray-200">
-        <div className="max-w-6xl w-full p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((sample) => (
-            <Card
-              key={sample}
-              className="shadow-md hover:shadow-lg transition rounded-2xl"
-            >
-              <CardContent className="p-4 flex flex-col items-center">
-                <img
-                  src={`/images/portfolio${sample}.jpg`}
-                  alt={`Portfolio project ${sample}`}
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                    e.target.nextSibling.style.display = "flex";
-                  }}
-                />
-                <div
-                  className="w-full h-48 bg-gray-200 rounded-lg mb-4 flex items-center justify-center text-gray-600"
-                  style={{ display: "none" }}
-                >
-                  Portfolio Item {sample}
-                </div>
-                <p className="text-center text-gray-700">Sample description {sample}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
       </section>
 
       {/* Contact Section */}
