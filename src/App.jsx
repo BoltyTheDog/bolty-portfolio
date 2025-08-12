@@ -230,8 +230,8 @@ export default function App() {
             className={`
               ${
                 lang === l
-                  ? "bg-gray-700/90 text-white font-semibold" // Selected: darker gray, 90% opacity
-                  : "bg-gray-500/70 text-white hover:bg-gray-600/80" // Unselected: medium gray, 70% opacity
+                  ? "bg-gray-700/75 text-white font-semibold" // Selected: darker gray, 90% opacity
+                  : "bg-gray-500/50 text-white hover:bg-gray-600/80" // Unselected: medium gray, 70% opacity
               }
               rounded-sm px-3 py-1 transition-colors border border-white/20
             `}
