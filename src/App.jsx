@@ -20,13 +20,16 @@ function easeInOutBack(t) {
 
 function CameraAnimator({ progress }) {
   const camera = useThree((state) => state.camera);
+  // Detect mobile with a media query
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
 
   useFrame(() => {
     const angleRange = 30; // degrees
     const startAngle = -15;
     const angle = startAngle + progress * angleRange;
     const rad = (angle * Math.PI) / 180;
-    const radius = 100;
+    const baseRadius = 100;
+    const radius = isMobile ? baseRadius * 3.5 : baseRadius;
 
     camera.position.x = Math.sin(rad) * radius;
     camera.position.z = Math.cos(rad) * radius;
@@ -37,8 +40,11 @@ function CameraAnimator({ progress }) {
   return null;
 }
 
+import { useRef } from "react";
 export function Hero({ titles, scrollProgress, setIndex }) {
   // Determine index from scrollProgress
+  const lastIndex = useRef(0);
+  const timeoutRef = useRef();
   let index;
   if (scrollProgress < 0.2) {
     index = 0; // Vision
@@ -48,8 +54,16 @@ export function Hero({ titles, scrollProgress, setIndex }) {
     index = 2; // Studios
   }
 
+  // Debounce setIndex so it only updates after scrolling stops for 200ms
   useEffect(() => {
-    setIndex(index);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      if (lastIndex.current !== index) {
+        setIndex(index);
+        lastIndex.current = index;
+      }
+    }, 200);
+    return () => clearTimeout(timeoutRef.current);
   }, [index, setIndex]);
 
   return (
@@ -137,30 +151,44 @@ export default function App() {
   const [index, setIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [lang, setLang] = useState("en");
-
-  const translations = {
-    en: {
-      contact: "Contact Me",
-      name: "Your Name",
-      email: "Your Email",
-      message: "Your Message",
-      send: "Send Message",
-    },
-    es: {
-      contact: "Contáctame",
-      name: "Tu Nombre",
-      email: "Tu Correo",
-      message: "Tu Mensaje",
-      send: "Enviar Mensaje",
-    },
-    ca: {
-      contact: "Contacta'm",
-      name: "El teu Nom",
-      email: "El teu Correu",
-      message: "El teu Missatge",
-      send: "Enviar Missatge",
-    },
-  };
+const translations = {
+  en: {
+    contact: "Contact Me",
+    name: "Your Name",
+    email: "Your Email",
+    message: "Your Message",
+    send: "Send Message",
+    about: {
+      name: "David Garcia Cirauqui",
+      location: "Based in Vilanova i la Geltrú, Barcelona",
+      description: "Engineering student with certifications and extensive experience in photogrammetry, 3D design, CAD, VFX, and cinematography. With a hidden ace up my sleeve in web development."
+    }
+  },
+  es: {
+    contact: "Contáctame",
+    name: "Tu Nombre",
+    email: "Tu Correo",
+    message: "Tu Mensaje",
+    send: "Enviar Mensaje",
+    about: {
+      name: "David Garcia Cirauqui",
+      location: "Con base en Vilanova i la Geltrú, Barcelona",
+      description: "Estudiante de ingeniería con certificaciones y amplia experiencia en el mundo de la fotogrametría, diseño 3D, CAD, VFX y cinematografía. Con un as en la manga sobre desarrollo web."
+    }
+  },
+  ca: {
+    contact: "Contacta'm",
+    name: "El teu Nom",
+    email: "El teu Correu",
+    message: "El teu Missatge",
+    send: "Enviar Missatge",
+    about: {
+      name: "David Garcia Cirauqui",
+      location: "Basat a Vilanova i la Geltrú, Barcelona",
+      description: "Estudiant d'enginyeria amb certificacions i àmplia experiència en fotogrametria, disseny 3D, CAD, VFX i cinematografia. Amb un as a la màniga en el desenvolupament web."
+    }
+  }
+};
 
   useEffect(() => {
     preloadModels();
@@ -196,10 +224,7 @@ export default function App() {
       .then(() => {
         alert("Thank you! Your message has been sent.");
         e.target.reset();
-      })
-      .catch((error) => {
-        alert("Oops! There was an error sending your message.");
-        console.error(error);
+           
       });
   };
 
@@ -242,9 +267,29 @@ export default function App() {
         <LiquidGlassTabs />
       </section>
 
-      {/* Contact Section */}
-      <section className="min-h-screen w-full flex items-center justify-center border-t border-gray-200 pt-12 pb-12">
-        <div className="max-w-3xl w-full p-6 bg-white rounded-2xl shadow-md">
+      {/* Contact & About Section */}
+  <section className="min-h-screen w-full flex flex-col md:flex-row items-center justify-center border-t border-gray-200 pt-12 pb-12 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+    <div className="w-full md:w-1/2 max-w-xl flex flex-col items-center md:items-end mb-10 md:mb-0 md:mr-8">
+            <div className="bg-white/80 rounded-2xl shadow-lg p-6 flex flex-col md:flex-row items-center w-full">
+              <div className="flex-shrink-0 flex items-center justify-center w-full md:w-auto md:h-full mb-6 md:mb-0">
+                <img
+                  src="/images/photo.png"
+                  alt="Bolty portrait"
+                  className="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full border-4 border-blue-200 shadow-lg"
+                  style={{ background: '#e0e6f0', objectPosition: 'center' }}
+                  onError={e => { e.target.style.display = 'none'; }}
+                />
+              </div>
+              <div className="flex-1 flex flex-col justify-center items-center md:items-start md:ml-8">
+                <h3 className="text-2xl font-bold mb-1">{translations[lang].about.name}</h3>
+                <div className="text-blue-700 text-sm mb-2">{translations[lang].about.location}</div>
+                <p className="text-gray-700 text-center md:text-left text-base">
+                  {translations[lang].about.description}
+                </p>
+              </div>
+            </div>
+            </div>
+  <div className="w-full md:w-1/2 max-w-xl p-6 bg-white rounded-2xl shadow-md">
           <h2 className="text-2xl font-bold mb-4">{translations[lang].contact}</h2>
 
           <form
@@ -296,6 +341,16 @@ export default function App() {
           </form>
         </div>
       </section>
+
+      {/* Footer Bar */}
+      <footer className="w-full bg-gray-900 text-gray-200 py-4 flex flex-col md:flex-row items-center justify-between px-6 text-sm mt-0">
+        <div>
+          &copy; {new Date().getFullYear()} Bolty
+        </div>
+        <div className="mt-2 md:mt-0">
+          Portfolio built with React, Vite, and Three.js
+        </div>
+      </footer>
       </div>
     </>
   );

@@ -117,19 +117,8 @@ export default function LiquidGlassTabs() {
     >
       {/* Tabs row */}
       <nav
-        style={{
-          display: "flex",
-          gap: "3rem",
-          marginBottom: "2rem",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          fontWeight: 400,
-          fontSize: "3.4rem",
-          cursor: "pointer",
-          color: activeTabObj.theme.text + "cc",
-          borderBottom: "2px solid transparent",
-          userSelect: "none",
-        }}
+        className="flex gap-4 md:gap-12 mb-8 justify-start items-center font-normal text-2xl md:text-4xl cursor-pointer select-none border-b-0"
+        style={{ color: activeTabObj.theme.text + 'cc' }}
       >
         {tabs.map(({ id, title, theme }) => (
           <div
@@ -158,65 +147,29 @@ export default function LiquidGlassTabs() {
         <>
           {/* Two-column layout for tinyplanet and explanation */}
           <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "2.5rem",
-              alignItems: "center",
-              marginBottom: "2.5rem",
-              flexWrap: "wrap",
-            }}
+            className="flex flex-col md:flex-row gap-6 md:gap-10 items-center mb-10"
           >
             {/* Tinyplanet viewer (placeholder or interactive) */}
-            <div style={{ flex: "0 0 280px", maxWidth: "100%" }}>
+            <div className="w-full max-w-xs md:max-w-xs flex-shrink-0">
               {!fullscreen && (
                 <div
                   onClick={() => setFullscreen(true)}
-                  style={{
-                    width: "280px",
-                    height: "280px",
-                    cursor: "pointer",
-                    borderRadius: "16px",
-                    overflow: "hidden",
-                    boxShadow: `0 8px 20px ${activeTabObj.theme.shadow}`,
-                    background: "#e0e0e0",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
+                  className="w-full aspect-square cursor-pointer rounded-2xl overflow-hidden flex items-center justify-center shadow-lg"
+                  style={{ boxShadow: `0 8px 20px ${activeTabObj.theme.shadow}` }}
                   title="Click to fullscreen"
                 >
                   <img
                     src="/images/littleplanetsoigrexa-placeholder.jpg"
                     alt="Tiny planet preview"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      borderRadius: "16px",
-                      display: "block",
-                    }}
+                    className="w-full h-full object-cover rounded-2xl block"
                   />
                 </div>
               )}
             </div>
             {/* Explanatory text */}
-            <div style={{ flex: 1, minWidth: 220 }}>
-              <div
-                style={{
-                  fontSize: "1.125rem",
-                  lineHeight: 1.6,
-                  color: activeTabObj.theme.text,
-                  userSelect: "text",
-                  transition: "color 0.5s ease",
-                  fontWeight: 500,
-                }}
-              >
-                <span style={{ fontSize: "1.4rem", fontWeight: 700, display: "block", marginBottom: "0.7rem" }}>
-                  Tiny Planet Effect
-                </span>
-                Experience our unique "tiny planet" panorama viewer! This effect transforms a 360° panoramic image into a captivating, interactive globe. Click the preview to explore the full immersive view in fullscreen mode.
-              </div>
+            <div className="flex-1 min-w-[180px] text-base md:text-lg font-medium" style={{ color: activeTabObj.theme.text }}>
+              <span className="block text-xl md:text-2xl font-bold mb-2">Tiny Planet Effect</span>
+              Experience our unique "tiny planet" panorama viewer! This effect transforms a 360° panoramic image into a captivating, interactive globe. Click the preview to explore the full immersive view in fullscreen mode.
             </div>
           </div>
         </>
