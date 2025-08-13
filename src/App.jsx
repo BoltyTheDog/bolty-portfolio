@@ -172,7 +172,7 @@ const translations = {
     send: "Enviar Mensaje",
     about: {
       name: "David Garcia Cirauqui",
-      location: "Con base en Vilanova i la Geltrú, Barcelona",
+      location: "Basado en Vilanova i la Geltrú, Barcelona",
       description: "Estudiante de ingeniería con certificaciones y amplia experiencia en el mundo de la fotogrametría, diseño 3D, CAD, VFX y cinematografía. Con un as en la manga sobre desarrollo web."
     }
   },
