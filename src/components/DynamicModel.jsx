@@ -2,9 +2,9 @@ import React, { useMemo } from "react";
 import { useGLTF } from "@react-three/drei";
 
 const modelPaths = {
-  Vision: "/models/visionmodel.glb",
-  GeoWorks: "/models/geoworksmodel.glb",
-  Studios: "/models/studiosmodel.glb",
+  Vision: "/models/visionmodel-draco.glb",
+  GeoWorks: "/models/geoworksmodel-draco.glb",
+  Studios: "/models/studiosmodel-draco.glb",
 };
 
 const modelTransforms = {
@@ -15,7 +15,7 @@ const modelTransforms = {
   },
   GeoWorks: {
     position: [100, -465, -400],
-    rotation: [3.50225, 0.2, 3.115], // 21.1 degrees ≈ 0.368 radians
+    rotation: [3.50225, 0.2, 3.115], 
     scale: 7,
   },
   Studios: {
