@@ -5,8 +5,6 @@ const tabs = [
   {
     id: "vision",
     title: "Vision",
-    content:
-      "Our vision is to innovate and transform the digital landscape, merging creativity with cutting-edge technology.",
     theme: {
       bg: "rgba(245, 61, 61, 0.6)", // Garnet red translucent
       text: "#f2dede", // Soft red/pink text
@@ -17,24 +15,24 @@ const tabs = [
     portfolio: [
       {
         id: 1,
-        title: "Visionary UI/UX",
-        description: "Innovative interface design for future apps.",
+        title: "Sketchfab Models Photogrammetry",
+        description: "Create and provide 3D Models with aerial/non-aerial photogrammetry.",
         image: "/images/portfolio1.jpg",
       },
       {
         id: 2,
-        title: "AI Integration",
-        description: "Seamless AI-powered user experience.",
+        title: "VR Experiences with footage",
+        description: "Quest 3 Showcases of different footages.",
         image: "/images/portfolio2.jpg",
       },
     ],
-    panorama: "/images/littleplanetsoigrexa.jpg",
   },
   {
     id: "geoworks",
     title: "GeoWorks",
-    content:
-      "GeoWorks pioneers geographic data solutions, delivering real-time insights with a stunning visual experience.",
+    content: [
+      "GeoWorks pioneers geographic data solutions"
+    ],
     theme: {
       bg: "rgba(46, 139, 87, 0.6)", // Earth green translucent
       text: "#d0f0c0", // Soft green text
@@ -45,24 +43,24 @@ const tabs = [
     portfolio: [
       {
         id: 3,
-        title: "Geo Mapping",
-        description: "Interactive maps with real-time data.",
+        title: "Geo Mapping in RealityCapture",
+        description: "Interactive maps with quality data.",
         image: "/images/portfolio3.jpg",
       },
       {
         id: 4,
-        title: "Data Visualization",
-        description: "Clear, actionable geographic insights.",
+        title: "Data Visualization with Potree Cloud Models",
+        description: "Interactive sites with measures, etc...",
         image: "/images/portfolio4.jpg",
       },
     ],
-    panorama: "/images/geoworks-pano.jpg",
   },
   {
     id: "studios",
     title: "Studios",
-    content:
-      "Studios bring ideas to life through immersive storytelling, high-end design, and seamless user experience.",
+    content: [
+      "Studios bring ideas to life"
+    ],
     theme: {
       bg: "rgba(48, 213, 200, 0.6)", // Turquoise translucent
       text: "#c9f9f7", // Soft turquoise text
@@ -73,18 +71,17 @@ const tabs = [
     portfolio: [
       {
         id: 5,
-        title: "Immersive Storytelling",
-        description: "High-end cinematic experiences.",
+        title: "Aerial VFX",
+        description: "Blender COLMAP Tracking and VFX.",
         image: "/images/portfolio5.jpg",
       },
       {
         id: 6,
-        title: "UX/UI Excellence",
-        description: "Seamless and beautiful design systems.",
+        title: "Product, Automotive, Real State showcases",
+        description: "Cinematic shots and interactive experiences.",
         image: "/images/portfolio6.jpg",
       },
     ],
-    panorama: "/images/studios-pano.jpg",
   },
 ];
 
@@ -113,8 +110,35 @@ export default function LiquidGlassTabs() {
           "background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease",
         position: "relative",
         zIndex: fullscreen ? 9999 : "auto",
+        overflow: "visible",
       }}
     >
+      {/* Top Gradient Bleed */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "48px",
+          pointerEvents: "none",
+          background: `linear-gradient(to bottom, ${activeTabObj.theme.bg} 0%, transparent 100%)`,
+          zIndex: 1,
+        }}
+      />
+      {/* Bottom Gradient Bleed */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "48px",
+          pointerEvents: "none",
+          background: `linear-gradient(to top, ${activeTabObj.theme.bg} 0%, transparent 100%)`,
+          zIndex: 1,
+        }}
+      />
       {/* Tabs row */}
       <nav
         className="flex gap-4 md:gap-12 mb-8 justify-start items-center font-normal text-2xl md:text-4xl cursor-pointer select-none border-b-0"
@@ -182,10 +206,15 @@ export default function LiquidGlassTabs() {
             minHeight: "120px",
             userSelect: "text",
             transition: "color 0.5s ease",
-            marginBottom: "2rem",
+            marginBottom: "-6rem",
           }}
         >
-          {activeTabObj.content}
+
+          {Array.isArray(activeTabObj.content)
+            ? activeTabObj.content.map((line, idx) => (
+                <div key={idx}>{line}</div>
+              ))
+            : activeTabObj.content}
 
           {/* Optional image */}
           <div style={{ marginTop: "1rem" }}>
