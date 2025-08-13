@@ -1,4 +1,6 @@
 import { useState, useEffect, Suspense } from "react";
+import { useProgress } from "@react-three/drei";
+import LoadingOverlay from "./components/ui/LoadingOverlay";
 import { Canvas } from "@react-three/fiber";
 import { Environment, Text } from "@react-three/drei";
 
@@ -201,8 +203,12 @@ export default function App() {
       });
   };
 
+  const { progress, active } = useProgress();
+
   return (
-    <div className="min-h-screen bg-gray-20 text-gray-900 font-mono">
+    <>
+      {active && <LoadingOverlay progress={progress} />}
+      <div className="min-h-screen bg-gray-20 text-gray-900 font-mono">
       {/* Language Selector */}
       <div className="fixed top-4 right-4 flex space-x-2 z-30">
         {Object.keys(translations).map((l) => (
@@ -211,8 +217,8 @@ export default function App() {
             size="sm"
             className={`${
               lang === l
-                ? "bg-gray-500/75 text-white font-semibold"
-                : "bg-gray-300/50 text-white hover:bg-gray-600/80"
+                ? "bg-gray-700 bg-opacity-80 text-white font-semibold"
+                : "bg-gray-400 bg-opacity-60 text-white hover:bg-gray-600 hover:bg-opacity-80"
             } rounded-sm px-3 py-1 transition-colors border border-white/20`}
             onClick={() => setLang(l)}
           >
@@ -221,7 +227,7 @@ export default function App() {
         ))}
       </div>
 
-      <Hero titles={titles} scrollProgress={scrollProgress} setIndex={setIndex} />
+  <Hero titles={titles} scrollProgress={scrollProgress} setIndex={setIndex} />
 
       {/* Tabs + Portfolio combined */}
       <section
@@ -290,6 +296,7 @@ export default function App() {
           </form>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

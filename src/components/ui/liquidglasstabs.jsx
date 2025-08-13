@@ -28,7 +28,7 @@ const tabs = [
         image: "/images/portfolio2.jpg",
       },
     ],
-    panorama: "/images/littleplanetsoigrexa.JPG",
+    panorama: "/images/littleplanetsoigrexa.jpg",
   },
   {
     id: "geoworks",
@@ -154,66 +154,109 @@ export default function LiquidGlassTabs() {
       </nav>
 
       {/* Content */}
-      <div
-        style={{
-          fontSize: "1.125rem",
-          lineHeight: 1.6,
-          color: activeTabObj.theme.text,
-          minHeight: "120px",
-          userSelect: "text",
-          transition: "color 0.5s ease",
-          marginBottom: "2rem",
-        }}
-      >
-        {activeTabObj.content}
-
-        {/* Optional image */}
-        <div style={{ marginTop: "1rem" }}>
-          <img
-            src={`/images/${activeTab}.jpg`}
-            alt={`${activeTab} visual`}
+      {activeTab === "vision" ? (
+        <>
+          {/* Two-column layout for tinyplanet and explanation */}
+          <div
             style={{
-              width: "100%",
-              maxHeight: "250px",
-              objectFit: "cover",
-              borderRadius: "8px",
-              boxShadow: `0 8px 20px ${activeTabObj.theme.shadow}`,
-              transition: "box-shadow 0.5s ease",
+              display: "flex",
+              flexDirection: "row",
+              gap: "2.5rem",
+              alignItems: "center",
+              marginBottom: "2.5rem",
+              flexWrap: "wrap",
             }}
-            onError={(e) => {
-              e.target.style.display = "none";
-            }}
-          />
-        </div>
-      </div>
-
-      {/* Vision Tab: little-planet viewer inline and fullscreen */}
-      {activeTab === "vision" && !fullscreen && (
+          >
+            {/* Tinyplanet viewer (placeholder or interactive) */}
+            <div style={{ flex: "0 0 280px", maxWidth: "100%" }}>
+              {!fullscreen && (
+                <div
+                  onClick={() => setFullscreen(true)}
+                  style={{
+                    width: "280px",
+                    height: "280px",
+                    cursor: "pointer",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    boxShadow: `0 8px 20px ${activeTabObj.theme.shadow}`,
+                    background: "#e0e0e0",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                  title="Click to fullscreen"
+                >
+                  <img
+                    src="/images/littleplanetsoigrexa-placeholder.jpg"
+                    alt="Tiny planet preview"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "16px",
+                      display: "block",
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+            {/* Explanatory text */}
+            <div style={{ flex: 1, minWidth: 220 }}>
+              <div
+                style={{
+                  fontSize: "1.125rem",
+                  lineHeight: 1.6,
+                  color: activeTabObj.theme.text,
+                  userSelect: "text",
+                  transition: "color 0.5s ease",
+                  fontWeight: 500,
+                }}
+              >
+                <span style={{ fontSize: "1.4rem", fontWeight: 700, display: "block", marginBottom: "0.7rem" }}>
+                  Tiny Planet Effect
+                </span>
+                Experience our unique "tiny planet" panorama viewer! This effect transforms a 360° panoramic image into a captivating, interactive globe. Click the preview to explore the full immersive view in fullscreen mode.
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
         <div
-          onClick={() => setFullscreen(true)}
           style={{
-            width: "280px",
-            height: "280px",
-            cursor: "pointer",
-            borderRadius: "16px",
-            overflow: "hidden",
-            boxShadow: `0 8px 20px ${activeTabObj.theme.shadow}`,
-            marginTop: "2rem",
+            fontSize: "1.125rem",
+            lineHeight: 1.6,
+            color: activeTabObj.theme.text,
+            minHeight: "120px",
+            userSelect: "text",
+            transition: "color 0.5s ease",
+            marginBottom: "2rem",
           }}
-          title="Click to fullscreen"
         >
-          <little-planet
-            src={activeTabObj.panorama}
-            mode="pano"
-            width={280}
-            height={280}
-            quality="high"
-            style={{ width: "100%", height: "100%", borderRadius: "16px" }}
-          />
+          {activeTabObj.content}
+
+          {/* Optional image */}
+          <div style={{ marginTop: "1rem" }}>
+            <img
+              src={`/images/${activeTab}.jpg`}
+              alt={`${activeTab} visual`}
+              style={{
+                width: "100%",
+                maxHeight: "250px",
+                objectFit: "cover",
+                borderRadius: "8px",
+                boxShadow: `0 8px 20px ${activeTabObj.theme.shadow}`,
+                transition: "box-shadow 0.5s ease",
+              }}
+              onError={(e) => {
+                e.target.style.display = "none";
+              }}
+            />
+          </div>
         </div>
       )}
 
-      {/* Fullscreen Overlay */}
+
+      {/* Fullscreen Overlay: Only load little-planet when fullscreen is active */}
       {fullscreen && (
         <div
           onClick={() => setFullscreen(false)}
