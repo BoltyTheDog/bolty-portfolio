@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "./card";
 
 const tabs = [
@@ -91,6 +91,23 @@ export default function LiquidGlassTabs() {
   const [fullscreen, setFullscreen] = useState(false);
 
   const activeTabObj = tabs.find((tab) => tab.id === activeTab);
+  const preloadedRef = useRef(false);
+
+  // Prefetch panorama image and create an offscreen little-planet element to
+  // force mobile browsers (Chrome Android) to download resources early.
+  useEffect(() => {
+    const vision = tabs.find((t) => t.id === "vision");
+    if (!vision || !vision.panorama) return;
+
+    // Prefetch the image
+    const img = new Image();
+    img.src = vision.panorama;
+    img.onload = () => {
+      preloadedRef.current = true;
+    };
+
+    // Nothing to cleanup for Image prefetch
+  }, []);
 
   // Prevent event bubbling when clicking inside viewer (to avoid closing fullscreen)
   function stopPropagation(e) {
