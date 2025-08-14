@@ -5,6 +5,7 @@ const tabs = [
   {
     id: "vision",
     title: "Vision",
+  panorama: "/images/littleplanetsoigrexa.jpg",
     theme: {
       bg: "rgba(245, 61, 61, 0.6)", // Garnet red translucent
       text: "#f2dede", // Soft red/pink text
