@@ -36,6 +36,17 @@ const SOCIAL_NETWORKS_ICONS: Icon = {
     d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
   ></path></svg
 >`,
+  YouTube: `<svg
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  xmlns="http://www.w3.org/2000/svg"
+  style="margin-right: 8px"
+  ><path
+    fill="currentColor"
+    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+  ></path></svg
+>`,
   LinkedIn: `<svg
   height="16"
   width="16"
@@ -151,6 +162,58 @@ const profilesInfo = profiles.map(({ network, url }) => {
   <path stroke-linecap="round" stroke-linejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m10.5 0a48.536 48.536 0 0 0-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5Zm-3 0h.008v.008H15V10.5Z" />
 </svg>
 `,
+        section: dataTranslate.actions,
+        handler: () => {
+          window.print()
+        },
+      },
+      {
+        id: "copy-email",
+        title: "Copy Email",
+        hotkey: "ctrl+E",
+        icon: `<svg style="margin-right: 8px" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>`,
+        section: dataTranslate.actions,
+        handler: () => {
+          navigator.clipboard.writeText("boltythedoge@gmail.com")
+          alert("Email copied to clipboard!")
+        },
+      },
+      {
+        id: "toggle-theme",
+        title: "Toggle Dark Mode",
+        hotkey: "ctrl+D",
+        icon: `<svg style="margin-right: 8px" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>`,
+        section: dataTranslate.actions,
+        handler: () => {
+          const isDark = document.documentElement.style.filter === "invert(1)";
+          if (isDark) {
+            document.documentElement.style.filter = "";
+            // Remove double invert from profile picture
+            const profileImg = document.querySelector('figure img');
+            if (profileImg) profileImg.style.filter = "";
+          } else {
+            document.documentElement.style.filter = "invert(1)";
+            // Double invert profile picture to keep it normal
+            const profileImg = document.querySelector('figure img');
+            if (profileImg) profileImg.style.filter = "invert(1)";
+          }
+        },
+      },
+      {
+        id: "scroll-top",
+        title: "Scroll to Top",
+        hotkey: "ctrl+↑",
+        icon: `<svg style="margin-right: 8px" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>`,
+        section: "Navigation",
+        handler: () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+        },
+      },
+      {
+        id: "download-cv",
+        title: "Download CV as PDF",
+        hotkey: "ctrl+S",
+        icon: `<svg style="margin-right: 8px" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg>`,
         section: dataTranslate.actions,
         handler: () => {
           window.print()

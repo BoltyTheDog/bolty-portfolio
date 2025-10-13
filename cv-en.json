@@ -191,7 +191,7 @@
       "startDate": "2025-03-15",
       "endDate": "",
       "description": "VR application for visualizing radiation data in an immersive environment.",
-      "highlights": ["Vite", "Three.js", "Astro"],
+      "highlights": ["C#", "MetaXR", "Unity"],
       "urls": {
         "website": "https://www.youtube.com/watch?v=03oUUwUHBF8&list=PLbkmSJxNneSdxN6oLJbWGMn3Cjhp62pPB&index=9",
         "gitHub": "https://github.com/BoltyTheDog"
