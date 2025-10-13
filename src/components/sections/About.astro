@@ -1,0 +1,10 @@
+---
+import Section from "@/components/Section.astro"
+
+const basics = Astro.props.cv.basics
+const { summary } = basics
+---
+
+<Section title="about">
+  <p>{summary}</p>
+</Section>

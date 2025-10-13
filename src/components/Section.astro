@@ -1,0 +1,28 @@
+---
+import { useTranslations } from "@/i18n/utils"
+import { languageList } from "@/i18n/ui"
+const { title } = Astro.props
+const currentLanguage = Astro.currentLocale
+const translateTitles = useTranslations(
+  currentLanguage as keyof typeof languageList,
+)
+---
+
+<section>
+  {title && <h2>{translateTitles(title)}</h2>}
+  <slot />
+</section>
+
+<style>
+  section {
+    max-width: 700px;
+    margin: 0 auto 48px;
+  }
+
+  h2 {
+    margin-bottom: 8px;
+    font-weight: 700;
+    line-height: 1.5;
+    font-size: 1.5rem;
+  }
+</style>

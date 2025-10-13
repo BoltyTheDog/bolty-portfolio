@@ -1,0 +1,201 @@
+{
+  "basics": {
+    "name": "Bolty",
+    "label": "Ingeniero de Software. Apasionado por crear soluciones innovadoras.",
+    "image": "/profile.png",
+    "email": "boltythedoge@gmail.com",
+    "phone": "000000000",
+    "url": "https://bolty.website",
+    "summary": "Desarrollador fullstack apasionado por las tecnologías web modernas y la creación de soluciones impactantes. Me gusta trabajar con frameworks de vanguardia y construir software que marque la diferencia.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Tu Ciudad",
+      "countryCode": "US",
+      "region": "Tu Región"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "BoltyTheDog",
+        "url": "https://github.com/BoltyTheDog"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "david-garcia-cirauqui",
+        "url": "https://www.linkedin.com/in/david-garcia-cirauqui-8a10542b5/"
+      },
+      {
+        "network": "X",
+        "username": "Bolty9752485505",
+        "url": "https://x.com/Bolty9752485505"
+      },
+      {
+        "network": "YouTube",
+        "username": "boltythedoge",
+        "url": "https://www.youtube.com/@boltythedoge"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Tu Empresa",
+      "position": "Ingeniero de Software",
+      "url": "https://tuempresa.com/",
+      "startDate": "2023-01",
+      "endDate": "",
+      "summary": "Desarrollé y mantuve aplicaciones web full-stack utilizando tecnologías modernas. Colaboré con equipos multifuncionales para entregar soluciones de software de alta calidad.",
+      "highlights": ["Construí aplicaciones web responsivas", "Implementé pipelines de CI/CD", "Lideré discusiones técnicas"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [""]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Tu Universidad",
+      "url": "https://tuuniversidad.edu/",
+      "area": "Ciencias de la Computación",
+      "studyType": "Licenciatura",
+      "startDate": "2020-09-01",
+      "endDate": "2024-05-01",
+      "score": "",
+      "courses": ["Estructuras de Datos", "Algoritmos", "Desarrollo Web", "Ingeniería de Software"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    }
+  ],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Avanzado",
+      "keywords": ["Desarrollo Web", "Frontend", "Semántico", "SEO"]
+    },
+    {
+      "name": "CSS",
+      "level": "Avanzado",
+      "keywords": ["SASS", "Flexbox", "Grid", "Diseño Responsivo"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Avanzado",
+      "keywords": ["React", "Node.js", "TypeScript", "ES6+ Moderno"]
+    },
+    {
+      "name": "React",
+      "level": "Avanzado",
+      "keywords": ["Frontend", "Componentes", "Hooks", "Gestión de Estado"]
+    },
+    {
+      "name": "Node",
+      "level": "Intermedio",
+      "keywords": ["Backend", "API", "Lado del servidor"]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Avanzado",
+      "keywords": ["Seguridad de Tipos", "Frontend", "Backend"]
+    },
+    {
+      "name": "Git",
+      "level": "Avanzado",
+      "keywords": ["Control de Versiones", "Colaboración"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Avanzado",
+      "keywords": ["Control de Versiones", "CI/CD", "Código Abierto"]
+    },
+    {
+      "name": "Python",
+      "level": "Intermedio",
+      "keywords": ["Backend", "Ciencia de Datos", "Automatización"]
+    },
+    {
+      "name": "Three.js",
+      "level": "Intermedio",
+      "keywords": ["Gráficos 3D", "WebGL", "Interactivo"]
+    },
+    {
+      "name": "Go",
+      "level": "Intermedio",
+      "keywords": ["Backend", "Programación de Sistemas", "Rendimiento"]
+    },
+    {
+      "name": "SolidWorks",
+      "level": "Avanzado",
+      "keywords": ["CAD", "Modelado 3D", "Diseño de Ingeniería"]
+    },
+    {
+      "name": "RealityCapture",
+      "level": "Intermedio",
+      "keywords": ["Fotogrametría", "Reconstrucción 3D", "Topografía"]
+    },
+    {
+      "name": "Blender",
+      "level": "Intermedio",
+      "keywords": ["Modelado 3D", "Animación", "Renderizado"]
+    },
+    {
+      "name": "DaVinci Resolve",
+      "level": "Intermedio",
+      "keywords": ["Edición de Video", "Corrección de Color", "Post-producción"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Inglés",
+      "fluency": "Profesional"
+    },
+    {
+      "language": "Español",
+      "fluency": "Nativo"
+    },
+    {
+      "language": "Catalán",
+      "fluency": "Nativo"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "Portafolio Interactivo 3D",
+      "startDate": "2024-01-15",
+      "endDate": "",
+      "description": "Un sitio web de portafolio moderno con elementos 3D interactivos y animaciones",
+      "highlights": ["React", "Three.js", "WebGL"],
+      "urls": {
+        "website": "https://bolty-portfolio.netlify.app/",
+        "gitHub": "https://github.com/bolty/portfolio"
+      }
+    },
+    {
+      "name": "Proyecto de Aplicación Web",
+      "startDate": "2023-08-01",
+      "endDate": "2023-12-01",
+      "description": "Aplicación web full-stack con características modernas y diseño responsivo",
+      "highlights": ["React", "Node.js", "MongoDB"],
+      "urls": {
+        "website": "",
+        "gitHub": "https://github.com/bolty/web-app"
+      }
+    }
+  ]
+}

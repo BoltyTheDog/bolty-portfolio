@@ -1,0 +1,68 @@
+---
+import Section from "@/components/Section.astro"
+
+const { languages } = Astro.props.cv
+---
+
+<Section title="languages">
+  <ul>
+    {
+      languages.map(({ language, fluency }) => (
+        <li>
+          <div class="language">
+            <div class="language-name">{language}</div>
+            <div class="fluency">{fluency}</div>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Section>
+
+<style>
+  ul {
+    display: inline-flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .language {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+  }
+
+  .language-name {
+    font-weight: 600;
+    color: #333;
+  }
+
+  .fluency {
+    color: #666;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      gap: 4px;
+    }
+    
+    .language {
+      min-width: 100px;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+    }
+    
+    .fluency {
+      font-size: 0.75rem;
+    }
+  }
+</style>

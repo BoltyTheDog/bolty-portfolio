@@ -1,0 +1,201 @@
+{
+  "basics": {
+    "name": "David García Cirauqui",
+    "label": "Very diversified engineer student.",
+    "image": "/profile.png",
+    "email": "boltythedoge@gmail.com",
+    "phone": "000000000",
+    "url": "https://bolty.website",
+    "summary": "Fullstack developer passionate about modern web technologies and creating impactful solutions. I enjoy working with cutting-edge frameworks and building software that makes a difference.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Vilanova i la Geltrú",
+      "countryCode": "ES",
+      "region": "Barcelona"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "BoltyTheDog",
+        "url": "https://github.com/BoltyTheDog"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "david-garcia-cirauqui",
+        "url": "https://www.linkedin.com/in/david-garcia-cirauqui-8a10542b5/"
+      },
+      {
+        "network": "X",
+        "username": "Bolty9752485505",
+        "url": "https://x.com/Bolty9752485505"
+      },
+      {
+        "network": "YouTube",
+        "username": "boltythedoge",
+        "url": "https://www.youtube.com/@boltythedoge"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "UPC INIREC",
+      "position": "Software/Mechanical Engineer",
+      "url": "https://eetac.upc.edu/ca",
+      "startDate": "2025-02",
+      "endDate": "",
+      "summary": "Developing and updating new systems designed for the acquisition and processing of Radiation Detector data, by Drone, Wearables and visualized by Augmented Reality and orthodox methods.",
+      "highlights": ["Virtual Reality", "Automatization", "Full Stack Development", "CAD"]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "",
+      "position": "",
+      "url": "",
+      "startDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": [""]
+    }
+  ],
+  "education": [
+    {
+      "institution": "UPC",
+      "url": "https://eetac.upc.edu/ca",
+      "area": "Aerospace Engineering",
+      "studyType": "University Degree",
+      "startDate": "2023-07-01",
+      "endDate": "202X-XX-XX",
+      "score": "",
+      "courses": ["Data Structures", "Algorithms", "Web Development", "Software Engineering"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "",
+      "date": "",
+      "awarder": "",
+      "summary": ""
+    }
+  ],
+  "certificates": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Advanced",
+      "keywords": ["Web Development", "Frontend", "Semantic", "SEO"]
+    },
+    {
+      "name": "CSS",
+      "level": "Advanced",
+      "keywords": ["SASS", "Flexbox", "Grid", "Responsive Design"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Advanced",
+      "keywords": ["React", "Node.js", "TypeScript", "Modern ES6+"]
+    },
+    {
+      "name": "React",
+      "level": "Advanced",
+      "keywords": ["Frontend", "Components", "Hooks", "State Management"]
+    },
+    {
+      "name": "Node",
+      "level": "Intermediate",
+      "keywords": ["Backend", "API", "Server-side"]
+    },
+    {
+      "name": "TypeScript",
+      "level": "Advanced",
+      "keywords": ["Type Safety", "Frontend", "Backend"]
+    },
+    {
+      "name": "Git",
+      "level": "Advanced",
+      "keywords": ["Version Control", "Collaboration"]
+    },
+    {
+      "name": "GitHub",
+      "level": "Advanced",
+      "keywords": ["Version Control", "CI/CD", "Open Source"]
+    },
+    {
+      "name": "Python",
+      "level": "Intermediate",
+      "keywords": ["Backend", "Data Science", "Automation"]
+    },
+    {
+      "name": "Three.js",
+      "level": "Intermediate",
+      "keywords": ["3D Graphics", "WebGL", "Interactive"]
+    },
+    {
+      "name": "Go",
+      "level": "Intermediate",
+      "keywords": ["Backend", "Systems Programming", "Performance"]
+    },
+    {
+      "name": "SolidWorks",
+      "level": "Advanced",
+      "keywords": ["CAD", "3D Modeling", "Engineering Design"]
+    },
+    {
+      "name": "RealityCapture",
+      "level": "Intermediate",
+      "keywords": ["Photogrammetry", "3D Reconstruction", "Surveying"]
+    },
+    {
+      "name": "Blender",
+      "level": "Intermediate",
+      "keywords": ["3D Modeling", "Animation", "Rendering"]
+    },
+    {
+      "name": "DaVinci Resolve",
+      "level": "Intermediate",
+      "keywords": ["Video Editing", "Color Grading", "Post-production"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Professional"
+    },
+    {
+      "language": "Spanish",
+      "fluency": "Native"
+    },
+    {
+      "language": "Catalan",
+      "fluency": "Native"
+    }
+  ],
+  "interests": [],
+  "references": [],
+  "projects": [
+    {
+      "name": "Interactive 3D Portfolio",
+      "startDate": "2024-01-15",
+      "endDate": "",
+      "description": "A modern portfolio website featuring interactive 3D elements and animations",
+      "highlights": ["React", "Three.js", "WebGL"],
+      "urls": {
+        "website": "https://bolty-portfolio.netlify.app/",
+        "gitHub": "https://github.com/bolty/portfolio"
+      }
+    },
+    {
+      "name": "Web Application Project",
+      "startDate": "2023-08-01",
+      "endDate": "2023-12-01",
+      "description": "Full-stack web application with modern features and responsive design",
+      "highlights": ["React", "Node.js", "MongoDB"],
+      "urls": {
+        "website": "",
+        "gitHub": "https://github.com/bolty/web-app"
+      }
+    }
+  ]
+}
