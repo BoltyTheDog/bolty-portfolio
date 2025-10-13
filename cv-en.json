@@ -63,7 +63,7 @@
     {
       "institution": "UPC",
       "url": "https://eetac.upc.edu/ca",
-      "area": "Aerospace Engineering",
+      "area": "Aerospace Engineering - EETAC",
       "studyType": "University Degree",
       "startDate": "2023-07-01",
       "endDate": "202X-XX-XX",
@@ -176,25 +176,36 @@
   "references": [],
   "projects": [
     {
-      "name": "Interactive 3D Portfolio",
-      "startDate": "2024-01-15",
+      "name": "Personal Website",
+      "startDate": "2025-06-15",
       "endDate": "",
-      "description": "A modern portfolio website featuring interactive 3D elements and animations",
-      "highlights": ["React", "Three.js", "WebGL"],
+      "description": "Personal website with basic information about me and my work.",
+      "highlights": ["Vite", "Three.js", "Astro"],
       "urls": {
-        "website": "https://bolty.website/",
+        "website": "https://bolty.website/en",
         "gitHub": "https://github.com/BoltyTheDog/bolty-portfolio"
       }
     },
     {
-      "name": "Web Application Project",
-      "startDate": "2023-08-01",
-      "endDate": "2023-12-01",
-      "description": "Full-stack web application with modern features and responsive design",
-      "highlights": ["React", "Node.js", "MongoDB"],
+      "name": "GammaVision",
+      "startDate": "2025-03-15",
+      "endDate": "",
+      "description": "VR application for visualizing radiation data in an immersive environment.",
+      "highlights": ["Vite", "Three.js", "Astro"],
       "urls": {
-        "website": "",
-        "gitHub": "https://github.com/BoltyTheDog/web-app"
+        "website": "https://www.youtube.com/watch?v=03oUUwUHBF8&list=PLbkmSJxNneSdxN6oLJbWGMn3Cjhp62pPB&index=9",
+        "gitHub": "https://github.com/BoltyTheDog"
+      }
+    },
+        {
+      "name": "WIP",
+      "startDate": "2026-03-15",
+      "endDate": "",
+      "description": "..............",
+      "highlights": ["C#", "MetaXR", "Unity"],
+      "urls": {
+        "website": "https://www.youtube.com/",
+        "gitHub": "https://github.com/BoltyTheDog"
       }
     }
   ]

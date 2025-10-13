@@ -1,7 +1,7 @@
 {
   "basics": {
-    "name": "Bolty",
-    "label": "Ingeniero de Software. Apasionado por crear soluciones innovadoras.",
+    "name": "David García Cirauqui",
+    "label": "Estuidiante de ingeniería muy diversificado.",
     "image": "/profile.png",
     "email": "boltythedoge@gmail.com",
     "phone": "000000000",
@@ -10,9 +10,9 @@
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Tu Ciudad",
-      "countryCode": "US",
-      "region": "Tu Región"
+      "city": "Vilanova i la Geltrú",
+      "countryCode": "ES",
+      "region": "Barcelona"
     },
     "profiles": [
       {
@@ -63,7 +63,7 @@
     {
       "institution": "UPC",
       "url": "https://eetac.upc.edu/ca",
-      "area": "Ingeniería Aeroespacial",
+      "area": "Ingeniería Aeroespacial - EETAC",
       "studyType": "Grado Universitario",
       "startDate": "2023-07-01",
       "endDate": "202X-XX-XX",
@@ -176,25 +176,36 @@
   "references": [],
   "projects": [
     {
-      "name": "Portafolio Interactivo 3D",
-      "startDate": "2024-01-15",
+      "name": "Web Personal",
+      "startDate": "2025-06-15",
       "endDate": "",
-      "description": "Un sitio web de portafolio moderno con elementos 3D interactivos y animaciones",
-      "highlights": ["React", "Three.js", "WebGL"],
+      "description": "Sitio web básico con información sobre mí y mi trabajo.",
+      "highlights": ["Vite", "Three.js", "Astro"],
       "urls": {
-        "website": "https://bolty.website/",
+        "website": "https://bolty.website/en",
         "gitHub": "https://github.com/BoltyTheDog/bolty-portfolio"
       }
     },
     {
-      "name": "Proyecto de Aplicación Web",
-      "startDate": "2023-08-01",
-      "endDate": "2023-12-01",
-      "description": "Aplicación web full-stack con características modernas y diseño responsivo",
-      "highlights": ["React", "Node.js", "MongoDB"],
+      "name": "GammaVision",
+      "startDate": "2025-03-15",
+      "endDate": "",
+      "description": "Aplicación de VR para visualizar datos de detectores de radiación en un entorno 3D inmersivo.",
+      "highlights": ["C#", "MetaXR", "Unity"],
       "urls": {
-        "website": "",
-        "gitHub": "https://github.com/BoltyTheDog/web-app"
+        "website": "https://www.youtube.com/watch?v=03oUUwUHBF8&list=PLbkmSJxNneSdxN6oLJbWGMn3Cjhp62pPB&index=9",
+        "gitHub": "https://github.com/BoltyTheDog"
+      }
+    },        
+    {
+      "name": "WIP",
+      "startDate": "2026-03-15",
+      "endDate": "",
+      "description": "..............",
+      "highlights": ["C#", "MetaXR", "Unity"],
+      "urls": {
+        "website": "https://www.youtube.com/",
+        "gitHub": "https://github.com/BoltyTheDog"
       }
     }
   ]
