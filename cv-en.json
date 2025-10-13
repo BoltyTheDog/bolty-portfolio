@@ -182,8 +182,8 @@
       "description": "A modern portfolio website featuring interactive 3D elements and animations",
       "highlights": ["React", "Three.js", "WebGL"],
       "urls": {
-        "website": "https://bolty-portfolio.netlify.app/",
-        "gitHub": "https://github.com/bolty/portfolio"
+        "website": "https://bolty.website/",
+        "gitHub": "https://github.com/BoltyTheDog/bolty-portfolio"
       }
     },
     {
@@ -194,7 +194,7 @@
       "highlights": ["React", "Node.js", "MongoDB"],
       "urls": {
         "website": "",
-        "gitHub": "https://github.com/bolty/web-app"
+        "gitHub": "https://github.com/BoltyTheDog/web-app"
       }
     }
   ]

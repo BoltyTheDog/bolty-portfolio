@@ -39,13 +39,13 @@
   },
   "work": [
     {
-      "name": "Tu Empresa",
-      "position": "Ingeniero de Software",
-      "url": "https://tuempresa.com/",
-      "startDate": "2023-01",
+      "name": "UPC INIREC",
+      "position": "Ingeniero de Software/Mecánico",
+      "url": "https://eetac.upc.edu/ca",
+      "startDate": "2025-02",
       "endDate": "",
-      "summary": "Desarrollé y mantuve aplicaciones web full-stack utilizando tecnologías modernas. Colaboré con equipos multifuncionales para entregar soluciones de software de alta calidad.",
-      "highlights": ["Construí aplicaciones web responsivas", "Implementé pipelines de CI/CD", "Lideré discusiones técnicas"]
+      "summary": "Desarrollando y actualizando nuevos sistemas diseñados para la adquisición y procesamiento de datos de Detectores de Radiación, mediante Drones, Wearables y visualizados por Realidad Aumentada y métodos ortodoxos.",
+      "highlights": ["Realidad Virtual", "Automatización", "Desarrollo Full Stack", "CAD"]
     }
   ],
   "volunteer": [
@@ -61,12 +61,12 @@
   ],
   "education": [
     {
-      "institution": "Tu Universidad",
-      "url": "https://tuuniversidad.edu/",
-      "area": "Ciencias de la Computación",
-      "studyType": "Licenciatura",
-      "startDate": "2020-09-01",
-      "endDate": "2024-05-01",
+      "institution": "UPC",
+      "url": "https://eetac.upc.edu/ca",
+      "area": "Ingeniería Aeroespacial",
+      "studyType": "Grado Universitario",
+      "startDate": "2023-07-01",
+      "endDate": "202X-XX-XX",
       "score": "",
       "courses": ["Estructuras de Datos", "Algoritmos", "Desarrollo Web", "Ingeniería de Software"]
     }
@@ -182,8 +182,8 @@
       "description": "Un sitio web de portafolio moderno con elementos 3D interactivos y animaciones",
       "highlights": ["React", "Three.js", "WebGL"],
       "urls": {
-        "website": "https://bolty-portfolio.netlify.app/",
-        "gitHub": "https://github.com/bolty/portfolio"
+        "website": "https://bolty.website/",
+        "gitHub": "https://github.com/BoltyTheDog/bolty-portfolio"
       }
     },
     {
@@ -194,7 +194,7 @@
       "highlights": ["React", "Node.js", "MongoDB"],
       "urls": {
         "website": "",
-        "gitHub": "https://github.com/bolty/web-app"
+        "gitHub": "https://github.com/BoltyTheDog/web-app"
       }
     }
   ]
