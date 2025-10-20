@@ -191,11 +191,17 @@ const profilesInfo = profiles.map(({ network, url }) => {
             // Remove double invert from profile picture
             const profileImg = document.querySelector('figure img');
             if (profileImg) profileImg.style.filter = "";
+            // Remove double invert from project thumbnails
+            const projectThumbnails = document.querySelectorAll('.project-thumbnail');
+            projectThumbnails.forEach(img => img.style.filter = "");
           } else {
             document.documentElement.style.filter = "invert(1)";
             // Double invert profile picture to keep it normal
             const profileImg = document.querySelector('figure img');
             if (profileImg) profileImg.style.filter = "invert(1)";
+            // Double invert project thumbnails to keep them normal
+            const projectThumbnails = document.querySelectorAll('.project-thumbnail');
+            projectThumbnails.forEach(img => img.style.filter = "invert(1)");
           }
         },
       },

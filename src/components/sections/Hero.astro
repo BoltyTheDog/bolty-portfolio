@@ -107,8 +107,11 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" | ")
         }
       </footer>
     </div>
-    <figure>
-      <img src={image} alt={name} />
+    <figure class="profile-container" data-track-zone="800">
+      <div class="profile-wrapper">
+        <img src={image} alt={name} class="profile-image" />
+        <div class="shimmer-overlay"></div>
+      </div>
     </figure>
   </div>
 
@@ -139,11 +142,77 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" | ")
       text-wrap: balance;
     }
 
-    img {
+    .profile-container {
+      perspective: 1000px;
+      width: 160px;
+      height: 160px;
+      position: relative;
+    }
+
+    .profile-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease-out;
+    }
+
+    .profile-wrapper.coin-flip-x {
+      animation: coinFlipX 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .profile-wrapper.coin-flip-y {
+      animation: coinFlipY 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    @keyframes coinFlipX {
+      0% { transform: rotateX(0deg); }
+      25% { transform: rotateX(1800deg); }
+      50% { transform: rotateX(2520deg); }
+      75% { transform: rotateX(2700deg); }
+      90% { transform: rotateX(2820deg); }
+      100% { transform: rotateX(2880deg); }
+    }
+
+    @keyframes coinFlipY {
+      0% { transform: rotateY(0deg); }
+      25% { transform: rotateY(1800deg); }
+      50% { transform: rotateY(2520deg); }
+      75% { transform: rotateY(2700deg); }
+      90% { transform: rotateY(2820deg); }
+      100% { transform: rotateY(2880deg); }
+    }
+
+    .profile-image {
       aspect-ratio: 1 / 1;
       object-fit: cover;
       width: 160px;
+      height: 160px;
       border-radius: 50%;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+    }
+
+    .shimmer-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      pointer-events: none;
+      background: linear-gradient(
+        135deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.6) 50%,
+        transparent 70%
+      );
+      background-size: 200% 200%;
+      background-position: -100% -100%;
+      opacity: 0;
+      transition: opacity 0.4s ease, background-position 0.2s ease-out;
+      z-index: 2;
     }
 
     #location {
@@ -195,4 +264,60 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" | ")
       }
     }
   </style>
+
+  <script>
+    const profileContainer = document.querySelector('.profile-container');
+    const profileWrapper = document.querySelector('.profile-wrapper');
+    const shimmerOverlay = document.querySelector('.shimmer-overlay');
+
+    if (profileContainer && profileWrapper && shimmerOverlay) {
+      // Get tracking zone size from data attribute (default 200px)
+      const trackZone = parseInt(profileContainer.dataset.trackZone) || 200;
+      let isInZone = false;
+      
+      // Use document-level mouse tracking for proper zone detection
+      document.addEventListener('mousemove', (e) => {
+        const rect = profileContainer.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const mouseX = e.clientX - centerX;
+        const mouseY = e.clientY - centerY;
+        
+        // Check if mouse is within the tracking zone
+        const distance = Math.sqrt(mouseX * mouseX + mouseY * mouseY);
+        const wasInZone = isInZone;
+        isInZone = distance <= trackZone / 2;
+        
+        // Create buffer zones for shimmer (smaller than tracking zone)
+        const shimmerZone = trackZone * 0.75; // 75% of tracking zone
+        const isInShimmerZone = distance <= shimmerZone / 2;
+        
+        if (isInZone) {
+          // Calculate rotation angles
+          const rotateX = (mouseY / (trackZone / 4)) * -15; // Max 15 degrees
+          const rotateY = (mouseX / (trackZone / 4)) * 15;   // Max 15 degrees
+          
+          // Apply rotation
+          profileWrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          
+          // Only show shimmer in the inner zone to prevent edge jumpiness
+          if (isInShimmerZone) {
+            shimmerOverlay.style.opacity = '1';
+            const shimmerX = ((mouseX / (shimmerZone / 2)) * 50) + 50; // 0-100%
+            const shimmerY = ((mouseY / (shimmerZone / 2)) * 50) + 50; // 0-100%
+            shimmerOverlay.style.backgroundPosition = `${shimmerX}% ${shimmerY}%`;
+          } else {
+            // Fade out shimmer near edges but keep rotation
+            shimmerOverlay.style.opacity = '0';
+          }
+        } else if (wasInZone) {
+          // Smoothly return to center when exiting zone
+          profileWrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
+          shimmerOverlay.style.opacity = '0';
+          shimmerOverlay.style.backgroundPosition = '-100% -100%';
+        }
+      });
+    }
+  </script>
 </Section>

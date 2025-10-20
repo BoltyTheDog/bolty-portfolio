@@ -5,8 +5,8 @@
     "image": "/profile.png",
     "email": "boltythedoge@gmail.com",
     "phone": "000000000",
-    "url": "https://bolty.website",
-    "summary": "Fullstack engineer uncapable of focusing on one single thing, i can't help it but explore all of the current posibiltiies and technologies.",
+    "url": "https://bolty.website/en",
+    "summary": "'Fullstack engineer' uncapable of focusing on one single thing, i can't help it but explore all of the current posibiltiies and technologies.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -46,6 +46,15 @@
       "endDate": "",
       "summary": "Developing and updating new systems designed for the acquisition and processing of Radiation Detector data, by Drone, Wearables and visualized by Augmented Reality and orthodox methods.",
       "highlights": ["Virtual Reality", "Automatization", "Full Stack Development", "CAD"]
+    },
+    {
+      "name": "UPC Space Program",
+      "position": "Software/Mechanical Engineer",
+      "url": "https://www.upcprogram.space/",
+      "startDate": "2024-02",
+      "endDate": "2025-02",
+      "summary": "Reinventering the gripper system for the robotic arm of the Martian rover that competes year after year in the European Rover Challenge.",
+      "highlights": ["Solidworks", "Arduino", "ROS", "Compliant Mechanisms"]
     }
   ],
   "volunteer": [
@@ -69,6 +78,26 @@
       "endDate": "202X-XX-XX",
       "score": "",
       "courses": ["Data Structures", "Algorithms", "Web Development", "Software Engineering"]
+    },
+        {
+      "institution": "Barcelona Supercomputing Center",
+      "url": "https://bsc.es/",
+      "area": "Supercomputing Course, Fundació la Pedrera",
+      "studyType": "Curso",
+      "startDate": "2023-01-01",
+      "endDate": "2023-05-20",
+      "score": "",
+      "courses": ["Supercomputing"]
+    },
+        {
+      "institution": "Escola Pia de Vilanova i la Geltrú",
+      "url": "https://escolapia.cat/",
+      "area": "High School -> MH 9.7",
+      "studyType": "Bachillerato",
+      "startDate": "2021-07-01",
+      "endDate": "2023-05-20",
+      "score": "",
+      "courses": ["Classics"]
     }
   ],
   "awards": [
@@ -175,26 +204,64 @@
   "interests": [],
   "references": [],
   "projects": [
+        {
+      "name": "GammaVision",
+      "startDate": "2025-03-15",
+      "endDate": "",
+      "description": "VR application for visualizing radiation data in an immersive environment.",
+      "highlights": ["C#", "MetaXR", "Unity"],
+      "thumbnail": "/project-thumbnails/gammavision.gif",
+      "urls": {
+        "website": "https://www.youtube.com/watch?v=03oUUwUHBF8&list=PLbkmSJxNneSdxN6oLJbWGMn3Cjhp62pPB&index=9",
+        "gitHub": "https://github.com/BoltyTheDog"
+      }
+    },
     {
       "name": "Personal Website",
       "startDate": "2025-06-15",
       "endDate": "",
-      "description": "Personal website with basic information about me and my work.",
+      "description": "Personal website with basic information about me and my work. A bit of everything from many fields.",
       "highlights": ["Vite", "Three.js", "Astro"],
+      "thumbnail": "/project-thumbnails/website.png",
       "urls": {
         "website": "https://bolty.website/en",
         "gitHub": "https://github.com/BoltyTheDog/bolty-portfolio"
       }
     },
     {
-      "name": "GammaVision",
-      "startDate": "2025-03-15",
-      "endDate": "",
-      "description": "VR application for visualizing radiation data in an immersive environment.",
-      "highlights": ["C#", "MetaXR", "Unity"],
+      "name": "TerrorSim",
+      "startDate": "2024-09-01",
+      "endDate": "2025-01-15",
+      "description": "3D ArcGIS plane simulation tool for designing flight plans with geo data.",
+      "highlights": ["C#", "WinForms", "ArcGIS"],
+      "thumbnail": "/project-thumbnails/terrorsim_gif.gif",
       "urls": {
-        "website": "https://www.youtube.com/watch?v=03oUUwUHBF8&list=PLbkmSJxNneSdxN6oLJbWGMn3Cjhp62pPB&index=9",
-        "gitHub": "https://github.com/BoltyTheDog"
+        "website": "https://github.com/Info1-DanielBryanArnauDavid/ArcGIS_TerrorSim/tree/Final",
+        "gitHub": "https://github.com/Info1-DanielBryanArnauDavid/ArcGIS_TerrorSim/tree/Final"
+      }
+    },
+        {
+      "name": "Darwin I",
+      "startDate": "2022-01-18",
+      "endDate": "2022-12-18",
+      "description": "Affordable 3D printed prosthetic hand with intuitive myoelectric control.",
+      "highlights": ["Arduino", "3D Printing", "Electronics"],
+      "thumbnail": "/project-thumbnails/darwin_gif.gif",
+      "urls": {
+        "website": "https://drive.google.com/file/d/1Vxdkg0_rJ7waIhSqzCT6aGuWCR8Xoj6n/view?usp=sharing",
+        "gitHub": "https://drive.google.com/file/d/1Vxdkg0_rJ7waIhSqzCT6aGuWCR8Xoj6n/view?usp=sharing"
+      }
+    },
+        {
+      "name": "VTTC",
+      "startDate": "2020-04-23",
+      "endDate": "2021-02-13",
+      "description": "Vacuum Tube Tesla coil made from Soviet-era radio towers Vacuum Tubes.",
+      "highlights": ["HV", "3D Printing", "Electrogamenetics"],
+      "thumbnail": "/project-thumbnails/vttc_gif.gif",
+      "urls": {
+        "website": "https://docs.google.com/document/d/1Y9gvmuNgSDwsNyoKu4cJqZZVvGt3g2J6JjmiNanu8es/edit?usp=sharing",
+        "gitHub": "https://docs.google.com/document/d/1Y9gvmuNgSDwsNyoKu4cJqZZVvGt3g2J6JjmiNanu8es/edit?usp=sharing"
       }
     },
         {

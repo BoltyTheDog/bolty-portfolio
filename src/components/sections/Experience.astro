@@ -51,6 +51,19 @@ const { work }: { work: WorkExperience[] } = Astro.props.cv
     display: flex;
     flex-direction: column;
     gap: 32px;
+    position: relative;
+  }
+
+  ul::before {
+    content: '';
+    position: absolute;
+    left: -2%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(200, 200, 200, 0.4);
+    border-radius: 2px;
+    z-index: -1;
   }
 
   article h3 {
