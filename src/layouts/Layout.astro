@@ -128,6 +128,14 @@ const { image, summary, url } = basics
     display: none !important;
   }
 
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
   .main-wrapper {
     max-width: 1200px;
     margin-left: auto;
@@ -143,12 +151,13 @@ const { image, summary, url } = basics
   @media (max-width: 1024px) {
     .main-wrapper {
       max-width: none;
-      width: 100%;
-      padding-left: 4vw;
-      padding-right: 4vw;
+      width: 100vw;
+      padding-left: 0;
+      padding-right: 0;
       margin-left: 0;
       margin-right: 0;
       box-sizing: border-box;
+      position: relative;
     }
   }
 
