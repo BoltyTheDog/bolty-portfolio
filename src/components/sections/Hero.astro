@@ -258,49 +258,70 @@ const printInfo = [email, phone, linkedUrl].filter(Boolean).join(" | ")
       h1 {
         letter-spacing: -0.1rem;
       }
-      img {
-        width: 130px;
-        margin-right: 30px;
+      .hero {
+        flex-direction: column;
+        align-items: center;
+      }
+      .profile-container {
+        width: 90vw;
+        max-width: 320px;
+        height: auto;
+        margin: 0 auto 1rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .profile-wrapper {
+        width: 100%;
+        height: auto;
+        min-width: 0;
+        min-height: 0;
+      }
+      .profile-image {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .shimmer-overlay {
+        display: none !important;
       }
     }
   </style>
 
   <script>
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     const profileContainer = document.querySelector('.profile-container');
     const profileWrapper = document.querySelector('.profile-wrapper');
     const shimmerOverlay = document.querySelector('.shimmer-overlay');
 
-    if (profileContainer && profileWrapper && shimmerOverlay) {
+    if (!isMobile && profileContainer && profileWrapper && shimmerOverlay) {
       // Get tracking zone size from data attribute (default 200px)
       const trackZone = parseInt(profileContainer.dataset.trackZone) || 200;
       let isInZone = false;
-      
       // Use document-level mouse tracking for proper zone detection
       document.addEventListener('mousemove', (e) => {
         const rect = profileContainer.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
-        
         const mouseX = e.clientX - centerX;
         const mouseY = e.clientY - centerY;
-        
         // Check if mouse is within the tracking zone
         const distance = Math.sqrt(mouseX * mouseX + mouseY * mouseY);
         const wasInZone = isInZone;
         isInZone = distance <= trackZone / 2;
-        
         // Create buffer zones for shimmer (smaller than tracking zone)
         const shimmerZone = trackZone * 0.75; // 75% of tracking zone
         const isInShimmerZone = distance <= shimmerZone / 2;
-        
         if (isInZone) {
           // Calculate rotation angles
           const rotateX = (mouseY / (trackZone / 4)) * -15; // Max 15 degrees
           const rotateY = (mouseX / (trackZone / 4)) * 15;   // Max 15 degrees
-          
           // Apply rotation
           profileWrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-          
           // Only show shimmer in the inner zone to prevent edge jumpiness
           if (isInShimmerZone) {
             shimmerOverlay.style.opacity = '1';
