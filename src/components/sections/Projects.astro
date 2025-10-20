@@ -182,14 +182,16 @@ const projects: Project[] = Astro.props.cv.projects
     }
   }
 
-  @media (width <= 700px) {
+  @media (max-width: 1024px) {
     #projects {
       grid-template-columns: 1fr;
       gap: 1rem;
     }
 
     ul {
-      margin-inline: 0px;
+      margin-inline: 0;
+      padding-left: 0;
+      padding-right: 0;
     }
 
     article {

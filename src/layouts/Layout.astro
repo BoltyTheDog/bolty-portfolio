@@ -42,7 +42,9 @@ const { image, summary, url } = basics
     <meta name="twitter:image" content="" />
   </head>
   <body>
-    <slot />
+    <div class="main-wrapper">
+      <slot />
+    </div>
   </body>
 </html>
 
@@ -124,6 +126,25 @@ const { image, summary, url } = basics
 
   .print {
     display: none !important;
+  }
+
+  .main-wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: none;
+  }
+
+  @media (max-width: 1024px) {
+    .main-wrapper {
+      padding-left: 5vw;
+      padding-right: 5vw;
+    }
   }
 
   @media print {
