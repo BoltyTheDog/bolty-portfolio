@@ -204,7 +204,19 @@
   "interests": [],
   "references": [],
   "projects": [
-        {
+            {
+      "name": "RadiXML",
+      "startDate": "2025-10-01",
+      "endDate": "",
+      "description": "XML node-based editing application to generate models for each use case.",
+      "highlights": ["Vite", "Go", "Python"],
+      "thumbnail": "/project-thumbnails/radixml_gif.gif",
+      "urls": {
+        "website": "",
+        "gitHub": "https://github.com/BoltyTheDog"
+      }
+    },
+    {
       "name": "GammaVision",
       "startDate": "2025-03-15",
       "endDate": "",
