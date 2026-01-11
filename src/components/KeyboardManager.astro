@@ -263,7 +263,42 @@ const profilesInfo = profiles.map(({ network, url }) => {
   @media (min-width: 601px) {
     #normal-footer {
       display: block;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: fit-content;
+      padding: 12px 20px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      text-align: left;
+      z-index: 100;
+      transition: all 0.3s ease;
+      cursor: default;
     }
+
+    #normal-footer:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    #normal-footer p {
+      color: #333;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    #normal-footer :global(kbd) {
+      background: #f0f0f0;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin: 0 2px;
+    }
+
     #footer-button {
       display: none;
     }
