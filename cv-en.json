@@ -204,6 +204,18 @@
   "interests": [],
   "references": [],
   "projects": [
+    {
+      "name": "HeatSeeker (WIP)",
+      "startDate": "2025-11-20",
+      "endDate": "",
+      "description": "Autonomous/Augmented Reality drone system for Gamma radiation source detection and localization.",
+      "highlights": ["Kotlin", "Android Studio", "Raspberry Pi","Go"],
+      "thumbnail": "/project-thumbnails/heatseeker_wip.png",
+      "urls": {
+        "website": "",
+        "gitHub": "https://github.com/BoltyTheDog"
+      }
+    },
             {
       "name": "RadiXML",
       "startDate": "2025-10-01",
