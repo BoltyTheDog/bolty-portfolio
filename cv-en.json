@@ -23,7 +23,7 @@
       {
         "network": "LinkedIn",
         "username": "david-garcia-cirauqui",
-        "url": "https://www.linkedin.com/in/david-garcia-cirauqui-8a10542b5/"
+        "url": "https://www.linkedin.com/in/david-garcia-cirauqui"
       },
       {
         "network": "X",
@@ -72,8 +72,8 @@
     {
       "institution": "UPC",
       "url": "https://eetac.upc.edu/ca",
-      "area": "Aerospace Engineering - EETAC",
-      "studyType": "University Degree",
+      "area": "Aerospace Engineering - Telecomunications Engineering EETAC",
+      "studyType": "Double University Degree",
       "startDate": "2023-07-01",
       "endDate": "202X-XX-XX",
       "score": "",
@@ -185,6 +185,11 @@
       "name": "DaVinci Resolve",
       "level": "Intermediate",
       "keywords": ["Video Editing", "Color Grading", "Post-production"]
+    },
+    {
+      "name": "Android Studio",
+      "level": "Intermediate",
+      "keywords": ["Mobile Development", "Kotlin", "Java"]
     }
   ],
   "languages": [
@@ -298,17 +303,6 @@
       "urls": {
         "website": "https://docs.google.com/document/d/1Y9gvmuNgSDwsNyoKu4cJqZZVvGt3g2J6JjmiNanu8es/edit?usp=sharing",
         "gitHub": "https://docs.google.com/document/d/1Y9gvmuNgSDwsNyoKu4cJqZZVvGt3g2J6JjmiNanu8es/edit?usp=sharing"
-      }
-    },
-        {
-      "name": "WIP",
-      "startDate": "2026-03-15",
-      "endDate": "",
-      "description": "..............",
-      "highlights": ["C#", "MetaXR", "Unity"],
-      "urls": {
-        "website": "https://www.youtube.com/",
-        "gitHub": "https://github.com/BoltyTheDog"
       }
     }
   ]
