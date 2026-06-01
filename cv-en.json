@@ -205,6 +205,18 @@
   "references": [],
   "projects": [
     {
+      "name": "RadiaSight (WIP)",
+      "startDate": "2026-02-01",
+      "endDate": "",
+      "description": "Biggest take on yet, live LiDAR small form-factor radiation detection drone",
+      "highlights": ["Jetson Nano", "FAST-LIO2", "Mesh Rirders","time"],
+      "thumbnail": "/project-thumbnails/radiasight_wip.gif",
+      "urls": {
+        "website": "",
+        "gitHub": "https://github.com/BoltyTheDog"
+      }
+    },
+    {
       "name": "HeatSeeker (WIP)",
       "startDate": "2025-11-20",
       "endDate": "",
