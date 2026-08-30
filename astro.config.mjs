@@ -9,6 +9,7 @@ export default defineConfig({
         locales: ['en', 'es'],
         routing: {
             prefixDefaultLocale: true,
+            redirectToDefaultLocale: false,
         }
     },
     site: 'https://bolty-portfolio.netlify.app/'
