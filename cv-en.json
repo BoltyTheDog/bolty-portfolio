@@ -214,11 +214,22 @@
       "startDate": "2026-02-01",
       "endDate": "",
       "description": "Biggest take on yet, live LiDAR small form-factor radiation detection drone",
-      "highlights": ["Jetson Nano", "FAST-LIO2", "Mesh Rirders","time"],
+      "highlights": ["Jetson Nano", "ROS2","LiDAR"],
       "thumbnail": "/project-thumbnails/radiasight_wip.gif",
       "urls": {
-        "website": "",
+        "website": "https://www.youtube.com/watch?v=JK7FPqJRnUM&list=PLLIsosutcpWc&index=3",
         "gitHub": "https://github.com/BoltyTheDog"
+      }
+    },
+    {
+      "name": "GammaDron",
+      "startDate": "2025-02-01",
+      "endDate": "",
+      "description": "Leading a gamma mapping drone project from the RIMASpec research group.",
+      "highlights": ["Gamma", "Drones", "Embedded", "Raspberry Pi"],
+      "thumbnail": "/project-thumbnails/gammadron_gif.gif",
+      "urls": {
+        "website": "https://www.youtube.com/watch?v=pSe6Y0viK_E&t=1s"
       }
     },
     {
@@ -227,7 +238,7 @@
       "endDate": "",
       "description": "Autonomous/Augmented Reality drone system for Gamma radiation source detection and localization.",
       "highlights": ["Kotlin", "Android Studio", "Raspberry Pi","Go"],
-      "thumbnail": "/project-thumbnails/heatseeker_wip.png",
+      "thumbnail": "/project-thumbnails/heatseeker_wip.gif",
       "urls": {
         "website": "",
         "gitHub": "https://github.com/BoltyTheDog"
